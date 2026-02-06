@@ -1,0 +1,120 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --blue: #00338D;
+  --yellow: #EBB700;
+  --purple: #7A2582;
+  --dark: #0D2240;
+  --text: #1E1E1E;
+  --surface: #ffffff;
+  --muted: #f1f4f8;
+  --border: #e4e8ef;
+  --accent: #407CCA;
+  --bg: #f7f8fa;
+}
+
+html {
+  color-scheme: light;
+}
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  min-height: 100vh;
+}
+
+body[data-theme="traditional"] {
+  --accent: #407CCA;
+  --bg: #f7f8fa;
+  --muted: #eef2f8;
+  --border: #e3e9f4;
+}
+
+body[data-theme="playful"] {
+  --accent: #FF5B35;
+  --bg: #fff7ed;
+  --muted: #fff1d7;
+  --border: #ffe1ae;
+  background-image: radial-gradient(circle at 10% 10%, rgba(235,183,0,0.18), transparent 45%),
+    radial-gradient(circle at 90% 20%, rgba(0,51,141,0.12), transparent 40%);
+}
+
+body[data-theme="bento"] {
+  --accent: #00AB68;
+  --bg: #f3f7f6;
+  --muted: #e7f2ee;
+  --border: #d9e7e0;
+  background-image: linear-gradient(160deg, rgba(0,51,141,0.08) 0%, rgba(0,171,104,0.08) 50%, rgba(122,37,130,0.08) 100%);
+}
+
+body[data-theme="classic"] {
+  --accent: #B3B2B1;
+  --bg: #f5f4f1;
+  --muted: #efede9;
+  --border: #d6d1c8;
+}
+
+body[data-theme="linkbio"] {
+  --accent: #55565A;
+  --bg: #f7faff;
+  --muted: #edf2fb;
+  --border: #d9e2f2;
+  background-image: linear-gradient(180deg, rgba(0,51,141,0.1), transparent 40%);
+}
+
+.theme-surface {
+  background: var(--surface);
+  border: 1px solid var(--border);
+}
+
+.theme-muted {
+  background: var(--muted);
+}
+
+.text-accent {
+  color: var(--accent);
+}
+
+.shadow-soft {
+  box-shadow: 0 18px 40px rgba(15, 23, 42, 0.08);
+}
+
+.shadow-strong {
+  box-shadow: 0 24px 60px rgba(15, 23, 42, 0.16);
+}
+
+.border-accent {
+  border-color: var(--accent);
+}
+
+.serif {
+  font-family: "Adobe Caslon", "Times New Roman", Times, serif;
+}
+
+.link-pill {
+  @apply inline-flex items-center justify-center rounded-full px-4 py-2 text-sm font-semibold;
+  background: var(--blue);
+  color: #fff;
+}
+
+.link-outline {
+  @apply inline-flex items-center justify-center rounded-full px-4 py-2 text-sm font-semibold;
+  border: 1px solid var(--blue);
+  color: var(--blue);
+}
+
+.link-accent {
+  @apply inline-flex items-center justify-center rounded-full px-4 py-2 text-sm font-semibold;
+  background: var(--accent);
+  color: #fff;
+}
+
+
+
+@media (max-width: 768px) {
+  .hide-mobile {
+    display: none;
+  }
+}
